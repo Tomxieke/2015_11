@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+		<ImageView 
+		    android:layout_marginLeft="10dp"
+		    android:id="@+id/file_back_img"
+		    android:layout_width="wrap_content"
+		    android:layout_height="30dp"
+		    android:clickable="true"
+		    android:src="@drawable/file_backbtn_selector"/>
+        <TextView
+            android:id="@+id/path"
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"/>
+    </LinearLayout>
+
+    <ListView 
+        android:id="@+id/file_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

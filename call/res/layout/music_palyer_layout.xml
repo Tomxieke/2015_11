@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:text="音乐播放器"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_light"/>
+    
+    <Button 
+        android:id="@+id/music_byIntent_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Intent隐式启动"
+        android:gravity="center"/>
+    
+    
+    <Button 
+        android:id="@+id/music_byMediaPlayer_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="byMediaPlayer启动"
+        android:gravity="center"/>
+    
+    <Button 
+        android:id="@+id/music_byMediaPlayer_two_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="MediaPlayer第二种方式启动"
+        android:gravity="center"/>
+    
+
+</LinearLayout>

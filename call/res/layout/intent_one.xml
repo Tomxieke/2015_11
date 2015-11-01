@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+        android:id="@+id/intent_button1"
+        android:layout_marginTop="20dp" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="通过设置Intent的几个属性来找到对应的Activity。并启动该Activity."/>
+    
+    <Button 
+        android:layout_marginTop="20dp" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onDirectStartTwo"
+        android:text="直接启动two"/>
+    
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="隐式启动Two"
+        android:onClick="onHideStartTwo"/>
+    
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="调用系统Call_Action"
+        android:onClick="onCallPhone"/>
+    
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="调用系统sendMassage"
+        android:onClick="onSendMassage"/>
+	
+    
+</LinearLayout>

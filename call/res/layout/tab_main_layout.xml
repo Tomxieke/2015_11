@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 必须设置id为 @android:id/tabhost -->
+    
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- 用RadioGroup联系TabWidget来实现菜单  需要将 TabWidget设置为隐藏 -->
+        
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+        </FrameLayout>
+        <!-- android:id="@android:id/tabcontent"  id 都是固定的 -->
+
+        <RadioGroup
+            android:id="@+id/tab_radioGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true" >
+
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/tab_radio_one_radioBtn"
+                android:drawableLeft="@drawable/tab_itemone_radiobtn_selecter"
+                android:textColor="@drawable/tab_item_radiobtn_txtcolor_selector"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:text="首页" />
+
+            <RadioButton
+                android:id="@+id/tab_radio_two_radioBtn"
+                android:drawableLeft="@drawable/tab_itemtwo_radiobtn_selecter"
+                android:textColor="@drawable/tab_item_radiobtn_txtcolor_selector"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="美食"
+                android:button="@null" />
+
+            <RadioButton
+                android:id="@+id/tab_radio_three_radioBtn"
+                android:drawableLeft="@drawable/tab_itemthree_radiobtn_selecter"
+                android:textColor="@drawable/tab_item_radiobtn_txtcolor_selector"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="更多"
+                android:button="@null" />
+        </RadioGroup>
+
+        
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/darker_gray" 
+            android:visibility="gone">
+        </TabWidget>
+        <!-- android:id="@android:id/tabs"  id 都是固定的        android:visibility="gone"  设置不可见-->
+    </RelativeLayout>
+
+</TabHost>

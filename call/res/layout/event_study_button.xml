@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/event_study_textview1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"/>
+    <!-- 匿名内部类实现事件处理的按钮 -->
+    <Button 
+        android:id="@+id/event_study_innerclass_button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="匿名内部类"/>
+    <!-- 内部类实现事件处理的按钮 -->
+    <Button 
+        android:id="@+id/event_study_innerclass_button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="内部类"/>
+    <!-- 实现接口来实现事件处理的按钮 -->
+    <Button 
+        android:id="@+id/event_study_implments_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="实现接口"/>
+    <!-- 通过android的方式来实现事件处理的按钮 -->
+    <Button 
+        android:id="@+id/event_study_android_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="android方式"
+        android:onClick="myOnClick"/>
+
+</LinearLayout>

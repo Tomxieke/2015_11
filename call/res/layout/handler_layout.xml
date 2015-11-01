@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/handler_textview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="线程之间通过Handler来实现通信"
+        android:textSize="13sp"
+        android:gravity="center"/>
+    
+    <Button 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/handler_btn_one"
+        android:text="主线程发送消息给子线程"/>
+    
+    <Button 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/handler_btn_two"
+        android:text="主线程发送给子线程 在发送给主线程处理信息"/>
+
+</LinearLayout>

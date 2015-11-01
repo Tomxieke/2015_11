@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:text="渐变"
+        style="@style/shape_textview_style"
+        android:background="@drawable/shape_gradient"/>
+    <TextView 
+        android:text="填充"
+        style="@style/shape_textview_style"
+        android:background="@drawable/shape_solid"/>
+    
+    <TextView 
+        android:text="描边"
+        style="@style/shape_textview_style"
+        android:background="@drawable/shape_stroke"/>
+    
+    <TextView 
+        android:text="圆角"
+        style="@style/shape_textview_style"
+        android:background="@drawable/shape_corners"/>
+    
+     <TextView 
+        android:text="padding"
+        style="@style/shape_textview_style"
+        android:background="@drawable/shape_padding"/>
+     
+     <Button 
+         android:layout_height="wrap_content"
+         android:layout_width="wrap_content"
+         android:text="按钮"
+         android:paddingLeft="25dp"
+         android:paddingRight="25dp"
+         android:paddingTop="6dp"
+         android:paddingBottom="6dp"
+         android:layout_marginTop="10dp"
+         android:layout_gravity="center_horizontal"
+         android:background="@drawable/shape_button_selector"/>
+
+     <SeekBar
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="5dp"
+         android:layout_marginRight="5dp"
+         android:progressDrawable="@drawable/shape_seekbar_bg"/>
+     
+
+</LinearLayout>

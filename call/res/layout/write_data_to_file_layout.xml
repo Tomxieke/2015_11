@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+	
+    <LinearLayout 
+        android:id="@+id/write_data_linearlayout"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+        <Button 
+            android:id="@+id/write"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="向文件中写入图片"/>
+        
+        <Button 
+            android:id="@+id/read"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="从文件中读取数据"/>
+    </LinearLayout>
+	<LinearLayout 
+	    android:layout_below="@id/write_data_linearlayout"
+	    android:layout_height="fill_parent"
+	    android:layout_width="fill_parent"
+	    android:orientation="vertical">
+	    <ImageView 
+	        android:id="@+id/inner_file_img"
+	        android:layout_width="fill_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1"/>
+	    
+	    <ImageView 
+	        android:id="@+id/out_file_private_img"
+	        android:layout_width="fill_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1"/>
+	    
+	    <ImageView 
+	        android:id="@+id/out_file_public_img"
+	        android:layout_width="fill_parent"
+	        android:layout_height="0dp"
+	        android:layout_weight="1"/>
+	</LinearLayout>
+</RelativeLayout>

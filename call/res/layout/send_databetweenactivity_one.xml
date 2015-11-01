@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="activity之间的数据传递测试  将下面的TextView中的内容
+        通过Intent传递给下面一个activityTwo"/>
+    
+    <TextView 
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendMassgaeToActivityTextOne"
+        android:text="要传递的消息数据"/>
+    
+    <Button 
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sendStringToActivityByIntent"
+        android:id="@+id/sendMassgaeToActivityBtnOne1"
+        android:text="android跳转到下一个activity并将基本数据传过去"/>
+    
+    <Button 
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendMassgaeToActivityBtnOne2"
+        android:text="监听方式通过Bundle对象传递数据"/>
+    
+    <Button 
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sendDataBySerializable"
+        android:id="@+id/sendMassgaeToActivityBtnOne3"
+        android:text="Serializable方式传递对象"/>
+    <!-- 传递对象需要改对象类实现 Serializable接口-->
+    
+     <Button 
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sendDataByParcelable"
+        android:id="@+id/sendMassgaeToActivityBtnOne4"
+        android:text="Parcelable方式传递对象"/>
+     
+     <Button 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="有回传值的启动方式不一样"
+         android:onClick="isReturnDataMethod"/>
+    
+
+</LinearLayout>

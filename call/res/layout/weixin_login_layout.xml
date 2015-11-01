@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+      
+    <TextView 
+        android:id="@+id/textview1_weixin"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="用户名:"
+        android:textSize="20sp"/>
+    
+    <TextView 
+        android:id="@+id/TextView_icon"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/weixin_icon" 
+       	android:layout_centerHorizontal="true"
+        android:layout_above="@id/textview1_weixin"/>
+    
+    <EditText
+        android:id="@+id/edittext1_weixin" 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/nine_picture_text"
+        android:hint="请输入用户名"
+        android:gravity="bottom"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/textview1_weixin"
+        android:layout_below="@id/TextView_icon"
+        android:layout_alignBottom="@id/textview1_weixin"/>
+    
+    <Button
+        android:id="@+id/weixin_delete_Button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/weixin_delete_selecter"
+        android:visibility="invisible"
+        android:layout_alignBottom="@id/edittext1_weixin"
+        android:layout_alignRight="@id/edittext1_weixin"
+        />
+    
+     <TextView 
+        android:id="@+id/textview2_weixin"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/textview1_weixin"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:text="密 码:"
+        android:textSize="20sp"/>
+     
+      <EditText 
+        android:id="@+id/edittext2_weixin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        android:gravity="bottom"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/textview2_weixin"
+        android:layout_below="@id/edittext1_weixin"
+        android:layout_alignBottom="@id/textview2_weixin"/>
+      
+      <Button
+        android:id="@+id/weixin_delete_Button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:background="@drawable/weixin_delete_selecter"
+        android:layout_alignBottom="@id/edittext2_weixin"
+        android:layout_alignRight="@id/edittext2_weixin"
+        />
+      
+      <Button
+          android:id="@+id/weixin_login_surebtn" 
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/textview2_weixin"
+          android:layout_marginTop="30dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:text="登\t录"
+          android:background="@drawable/button_selecter"
+          android:gravity="center"/>
+      
+      <TextView 
+          android:id="@+id/weixin_problem_textview"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="登录遇到问题？"
+          android:textSize="17sp"
+          android:layout_below="@id/weixin_login_surebtn"
+          android:layout_alignRight="@id/weixin_login_surebtn"/>
+      
+      <ImageView 
+          android:id="@+id/weixin_facebook_imageview"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:src="@drawable/weixin_login_facebook2"
+          android:layout_marginTop="25dp"
+          android:layout_below="@id/weixin_problem_textview"
+          android:layout_centerInParent="true"/>
+      
+      <TextView 
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:autoLink="web"
+          android:text="www.facebookol.com"
+          android:layout_alignBottom="@id/weixin_facebook_imageview"
+          android:layout_toRightOf="@id/weixin_facebook_imageview"
+          android:layout_marginLeft="5dp"
+          />
+    
+    
+
+</RelativeLayout>

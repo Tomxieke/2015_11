@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    
+    
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/sql_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="姓名：" />
+
+    <EditText
+         android:layout_alignBaseline="@id/sql_name"
+        android:id="@+id/sql_name_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/sql_name"
+        android:ems="10"
+        android:hint="请输入姓名" >
+    </EditText>
+
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:id="@+id/sql_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sql_name"
+        android:layout_marginTop="20dp"
+        android:text="密码：" />
+
+    <EditText
+        android:layout_alignBaseline="@id/sql_password"
+        android:id="@+id/sql_password_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/sql_password"
+        android:ems="10"
+        android:hint="请输入密码" >
+    </EditText>
+    
+    <Button 
+        android:id="@+id/sql_insert_btn"
+        android:text="注册"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sql_password"
+        android:layout_marginTop="10dp"/>
+    
+    <Button 
+        android:id="@+id/sql_search_btn"
+        android:text="查询"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sql_insert_btn"
+        android:layout_marginTop="10dp"/>
+    
+    <Button 
+        android:id="@+id/sql_search_cursor_btn"
+        android:text="通过Cursor显示查询结果"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sql_search_btn"
+        android:layout_marginTop="10dp"/>
+    
+    <ListView 
+        android:layout_below="@id/sql_search_cursor_btn"
+        android:id="@+id/sql_cursorAdapter_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

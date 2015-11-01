@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+    <Spinner 
+        android:id="@+id/adapter_homework_spinner"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      	android:spinnerMode="dropdown"
+      	android:popupBackground="@android:color/holo_blue_dark"
+        android:background="@android:color/holo_orange_dark"
+        android:prompt="@string/spinner_title"/>
+    
+    <Spinner 
+        android:id="@+id/adapter_homework_spinner2"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      	android:spinnerMode="dialog"
+        android:prompt="@string/spinner_title2"
+        android:entries="@array/languages"/>
+    <!-- entries 在资源文件中直接加载数据源    spinnerMode spinner提示框的弹出方式   prompt设置弹出提示框上的主题题目  -->
+    </LinearLayout> 
+    <Spinner 
+        android:id="@+id/adapter_homework_spinner1"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+      	android:spinnerMode="dropdown"
+      	android:popupBackground="@android:color/holo_blue_dark"
+        android:prompt="@string/spinner_title"/>
+    <AutoCompleteTextView 
+        android:id="@+id/adapter_homework_autocompletetextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入a或A以显示不同数据源提示"/>
+    
+    <ListView 
+        android:id="@+id/adapter_homework_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+    
+
+</LinearLayout>

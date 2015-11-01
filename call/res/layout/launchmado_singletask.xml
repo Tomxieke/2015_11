@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="单任务启动模式在启动新的Activity时，会扫描栈中是否有该Activity,如果有则直接跳转到该Activity.并将栈中压在它之上的所有Activity销毁掉
+ 该类直接跳转到list界面并销毁掉之间的单顶模式Activity(LaunchMadeSingTop)"/>
+    
+    <Button 
+        android:id="@+id/singleTask_toMainActivity_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转到MainActivity"/>
+    
+
+</LinearLayout>

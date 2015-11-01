@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	   <item
+        android:id="@+id/pop_twomenu_one"
+        android:title="是否发送">
+        <menu>
+            <item android:title="是"/>
+            <item android:title="否"/>
+        </menu>
+    </item>
+<!--  二级菜单在里面嵌套 -->
+	   <item
+        android:id="@+id/pop_twomenu_two"
+        android:title="确定下载">
+        <menu>
+            <item android:title="确定"/>
+            <item android:title="取消"/>
+        </menu>
+    </item>
+<!--  二级菜单在里面嵌套 -->    
+
+</menu>

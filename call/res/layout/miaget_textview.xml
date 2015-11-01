@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/img_buetyful"
+    android:layout_margin="10dp">
+    <!--横向排布的线性布局 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+    <TextView 
+        android:id="@+id/textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="@string/textview_txt"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:ems="5"
+        />
+    <!-- 让文本省略显示 -->
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_green_light"
+        android:singleLine="true"
+        android:text="@string/text1"
+        android:textSize="20sp"/>
+    
+    <TextView 
+        android:id="@+id/textview3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="@string/textview_txt"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:ems="5"
+        android:marqueeRepeatLimit="marquee_forever"/>
+		<!-- 让文本滚动显示 -->
+	</LinearLayout>
+	<RelativeLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_weight="1"
+	    >
+    	<TextView
+    	    android:id="@+id/textView1"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_margin="10dp"
+    	    android:background="@color/mybule"
+    	    android:autoLink="all"
+    	    android:text="@string/baidu"
+    	    android:textSize="@dimen/text_size"
+    	    />
+	    <!-- autolink将Text的值设置成网址格式 -->
+	    
+	    <TextView 
+	        android:id="@+id/textView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10dp"
+	        android:layout_below="@id/textView1"
+	        style="@style/textview_style1"
+	        android:text="@string/style"/>
+	    <!-- 通过自己定义的style来确定textview的显示属性
+	     -->
+	     <TextView 
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_below="@id/textView2"
+	         android:text="你好"
+	         android:ems="5"
+	         android:gravity="center_vertical"
+	         android:scrollHorizontally="true"
+	         android:textSize="24sp"
+	         android:drawableRight="@drawable/weixin_icon"/>
+	</RelativeLayout>
+	
+</LinearLayout>

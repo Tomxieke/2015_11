@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:stretchColumns="2">
+    
+    <TableRow android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+      <TextView android:layout_width="match_parent"
+          android:layout_height="wrap_content"     
+          android:text="@string/info" 
+          />             <!-- 一个TableRow对应一行 -->        
+    </TableRow>
+    <TableRow 
+        android:layout_marginTop="10dp">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textSize="20sp"/>
+        
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name1"
+            android:ems="8"/>
+    </TableRow>
+    <!-- 具体有多少列的话由TableRow里的控件个数决定 -->
+    <TableRow 
+        android:layout_marginTop="10dp">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:textSize="20sp"/>
+        
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/password1"
+            android:ems="6"/>
+    </TableRow>
+    
+     <TableRow 
+        android:layout_marginTop="10dp">
+        <Button 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/red"
+            />
+        
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/bb"
+            />
+        
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/exit"
+            />
+    </TableRow>
+    
+    
+    
+
+</TableLayout>

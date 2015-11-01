@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_pressed="true"  android:drawable="@drawable/yescheckbox"/>  <!-- 被压下状态时 的背景 -->
+	<item android:state_checked="true"  android:drawable="@drawable/yescheckbox"/>  <!-- 被选中时的背景 -->
+	<item android:drawable="@drawable/nocheckbox"/>  <!-- 普通正常状态下的背景 -->
+</selector>

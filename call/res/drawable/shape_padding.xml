@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:shape="rectangle">
+    <!-- shape 定义色块形状   -->
+    <stroke 
+        android:width="1dp"
+        android:color="@android:color/holo_red_dark"
+        android:dashWidth="3dp"
+        android:dashGap="1dp"/>
+<!--stroke 描边 -->
+
+	<solid 
+	    android:color="@android:color/holo_orange_dark"/>
+	<!-- solid填充色 -->
+	
+	<corners 
+	    android:radius="10dp"/>
+	
+	<padding 
+	    android:left="10dip"
+	    android:right="10dip"/>
+<!-- 左右加宽多少 -->	
+</shape>

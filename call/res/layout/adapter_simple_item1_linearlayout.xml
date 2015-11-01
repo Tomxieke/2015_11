@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+    
+    <ImageView 
+        android:layout_margin="5dp"
+        android:id="@+id/adapter_simple_icon_imageview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img_smile"
+        android:scaleType="centerCrop"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+        
+        <TextView 
+            android:id="@+id/adapter_simple_title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="18sp"
+            android:text="主题"
+            android:textColor="@android:color/holo_orange_light"/>
+        <TextView 
+            android:id="@+id/adapter_simple_content_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="内容"/>
+    </LinearLayout>
+    
+
+</LinearLayout>

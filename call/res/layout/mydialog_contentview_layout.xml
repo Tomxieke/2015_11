@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/seekbar_backgrund">
+    
+    <TextView 
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="登录系统"/>
+    <EditText 
+        android:id="@+id/myViewDialog_userName_edit"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nine_picture_text"
+        android:hint="用户名"/>
+    
+     <EditText
+        android:id="@+id/myViewDialog_password_edit" 
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nine_picture_text"
+        android:hint="密码"/>
+     
+     <LinearLayout
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center">
+	     <Button
+	         android:id="@+id/myViewDialog_cancal_btn" 
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:text="取消"/>
+	     
+	     <Button 
+	         android:id="@+id/myViewDialog_login_btn"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:text="登录"
+	         android:layout_marginLeft="20dp"/>
+	</LinearLayout>
+</LinearLayout>

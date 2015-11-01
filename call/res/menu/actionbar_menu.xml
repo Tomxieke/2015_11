@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/actionbar_one"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/ic_search_autocomplete"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="搜索"/>
+    <!--
+        android:showAsAction="ifRoom|collapseActionView"
+	    android:icon="@drawable/weixin_delete"/>"     actionView  Bar  点击图标在标题上出现搜索输入框
+    -->
+    <item
+        android:id="@+id/actionbar_share"
+        android:icon="@drawable/weixin_delete"
+        android:actionProviderClass="study_menu.MyActionProvider" 
+        android:showAsAction="always"
+        android:title="删除"/>
+    <!--android:actionProviderClass="android.widget.ShareActionProvider"  设置providerclass  -->
+    <item
+        android:id="@+id/actionbar_two"
+        android:icon="@drawable/ic_menu_life_circle_on"
+        android:showAsAction="always"
+        android:title="退出"/>
+    <item
+        android:id="@+id/actionbar_three"
+        android:showAsAction="never"
+        android:title="游戏"/>
+    <item
+        android:id="@+id/actionbar_four"
+        android:showAsAction="never"
+        android:title="再启动该activityAPP"/>
+
+</menu>

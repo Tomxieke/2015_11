@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <ProgressBar 
+        android:id="@+id/progressbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:max="100"
+        android:indeterminate="false"
+        />
+    <!--indeterminate  为false是设置进度条精确显示进度   max 进度条有多大。默认为100  -->
+    
+    <Button
+        android:id="@+id/progresbar_startbtn"
+        android:layout_marginTop="20dp" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始加载"
+        android:padding="2dp"
+        android:textSize="15sp"/>
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:max="100"
+        android:thumb="@drawable/progress_drawable_selecter" 
+        android:progressDrawable="@drawable/progressbar_background_selecter"/>
+
+    <!-- thumb定义滑块样式     progressDrawable定义滑竿样式-->
+    
+     <Button
+        android:id="@+id/progresbar_seekBarStartbtn"
+        android:layout_marginTop="20dp" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始加载"
+        android:padding="0dp"
+        android:textSize="10sp"/>
+     
+     <RatingBar 
+         android:layout_marginTop="20dp"
+         android:id="@+id/progress_ratingbar"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:numStars="6"
+         android:rating="3"/>
+     
+     <RelativeLayout 
+         android:layout_marginTop="10dp"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content">
+        <ImageView 
+            android:id="@+id/seekbar_run_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/progressl_for_run"/>
+
+        <SeekBar
+            android:id="@+id/seekbar_runningman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:max="100" />
+     </RelativeLayout>
+	<!-- 自定义seekbar的progressDrawable 参数为layer_list文件 -->
+     <RatingBar 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="20dp"
+         android:numStars="5"
+         android:rating="1"
+         android:progressDrawable="@drawable/my_seekbar_layer_list"/>
+</LinearLayout>

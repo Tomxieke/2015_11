@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/api_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你们好、大家好!"
+        android:textSize="40sp"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowColor="@color/myred"
+        android:shadowRadius="6"/>
+    <!-- 有阴影的字体设置 shadowDx-shadowDy-shadowColor-shadowRadius  四个属性一起设置-->
+    
+    <TextView 
+        
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="你们好lai子成哦度大家好!"
+        android:textStyle="italic"
+        android:textSize="40sp"
+        android:textAppearance="@android:attr/textAppearanceInverse"/>
+    
+
+</LinearLayout>

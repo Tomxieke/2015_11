@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    
+    <android.support.v4.view.ViewPager
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/viewpager"/>
+    <!-- 4包中。包名加类名导入 -->
+
+    <RelativeLayout
+        android:layout_marginBottom="80dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        
+        <ImageView
+            android:id="@+id/viewpager_img1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/viewpager_icon_on" />
+
+        <ImageView
+            android:id="@+id/viewpager_img2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/viewpager_img1"
+            android:layout_toRightOf="@id/viewpager_img1"
+            android:background="@drawable/viewpager_icon_off" />
+
+        <ImageView
+            android:id="@+id/viewpager_img3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/viewpager_img2"
+            android:layout_toRightOf="@id/viewpager_img2"
+            android:background="@drawable/viewpager_icon_off" />
+
+        <ImageView
+            android:id="@+id/viewpager_img4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/viewpager_img3"
+            android:layout_toRightOf="@id/viewpager_img3"
+            android:background="@drawable/viewpager_icon_off" />
+    </RelativeLayout>
+    
+     <Button
+            android:id="@+id/viewpager_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+          	android:layout_gravity="bottom|right"
+            android:clickable="true"
+            android:onClick="btnListener"
+            android:text="跳过>>" />
+	
+</FrameLayout>

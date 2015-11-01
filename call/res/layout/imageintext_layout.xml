@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="textview文本之间添加图片的实现三种方式"/>
+    
+    <TextView 
+        android:layout_marginTop="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="在xml中的drawable属性设置图片"
+        android:drawableBottom="@drawable/weixin_icon"
+        android:drawablePadding="5dp"
+        android:gravity="center_horizontal"/>
+    <!-- drawableRight  drawableTop  drawableButtom  drawableStrat  drawableEnd drawableLeft 只能设置这些位置。不够灵活-->
+    
+    <TextView 
+        android:id="@+id/imageInText_textview"
+        android:layout_marginTop="15dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+  <!-- ===========================================以下是TextView 加 ImageView 来实现效果 过于复杂===================================================== -->
+   <LinearLayout
+       android:layout_marginTop="15dp"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:text="文本中有图片"/>
+    
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/weixin_icon2"/>
+    <TextView 
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="有时一个TextView...太复杂"/>
+    </LinearLayout>
+  <!-- ======================================================================================================== -->
+   
+   <EditText 
+       android:layout_marginTop="20dp"
+       android:id="@+id/imageInText_editText"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:hint="点击按钮向文本输入框中加图片"/>
+   
+   <Button 
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:onClick="setImageListener"
+       android:text="加图片"/>
+</LinearLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	<TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="兴趣爱好"
+	    android:layout_marginLeft="100dp"/>
+	<LinearLayout 
+	    android:layout_marginTop="10dp"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal">
+	    <CheckBox
+	        android:id="@+id/study_checkBox1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="checkBoxChick"
+	        android:text="篮球" />
+	
+	    <CheckBox
+	        android:id="@+id/study_checkBox2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	         android:onClick="checkBoxChick"
+	        android:text="足球" />
+	    <CheckBox
+	        android:id="@+id/study_checkBox3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="checkBoxChick"
+	        android:text="乒乓球" />
+	</LinearLayout>
+	<!-- 自定义的多选框  -->
+	<TextView 
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="自定义兴趣爱好"
+	    android:layout_marginLeft="100dp"/>
+	<LinearLayout 
+	    android:layout_marginTop="10dp"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal">
+	    <CheckBox
+	        android:layout_marginLeft="20dp"
+	        android:id="@+id/study_mycheckBox1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="mycheckBoxChick"
+	        android:text="篮球" 
+	        android:background="@drawable/checkbox_selecter"
+	        android:button="@null"/>
+		<!-- background设置的selecter -->
+	    <CheckBox
+	        android:layout_marginLeft="20dp"
+	        android:id="@+id/study_mycheckBox2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="mycheckBoxChick"
+	        android:text="足球" 
+	        android:drawableEnd="@drawable/checkbox_selecter"
+	        android:button="@null"/>
+	    <!--drawableEnd设置的 selecter -->
+	    <!-- drawableEnd属性设置selecter会比background设置selecter有更好的效果 -->
+	    <CheckBox
+	     android:layout_marginLeft="20dp"
+	        android:id="@+id/study_mycheckBox5"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="mycheckBoxChick"
+	        android:text="足球" 
+	        android:drawableBottom="@drawable/checkbox_selecter"
+	        android:button="@null"/>
+	    
+	    <CheckBox
+	        android:layout_marginLeft="20dp"
+	        android:id="@+id/study_mycheckBox3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="mycheckBoxChick"
+	        android:text="乒乓球"
+	        android:background="@drawable/checkbox_selecter" 
+	        />
+	</LinearLayout>
+</LinearLayout>

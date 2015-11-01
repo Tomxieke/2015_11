@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView 
+        android:id="@+id/mp3_title"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:text="音乐播放器"
+        android:gravity="center"
+        android:background="@android:color/holo_blue_dark"/>
+    
+    
+    <LinearLayout
+        android:layout_alignParentBottom="true" 
+        android:id="@+id/mp3_btn_linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <Button 
+            android:id="@+id/mp3_search_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:text="加载"/>
+        <Button 
+            android:id="@+id/mp3_play_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="播放"/>
+        <Button 
+            android:id="@+id/mp3_pause_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="暂停"/>
+    </LinearLayout>
+    
+    <ListView 
+        android:id="@+id/mp3_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/mp3_btn_linearLayout"
+        android:layout_below="@id/mp3_title"/>
+
+	<RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_above="@id/mp3_btn_linearLayout" >
+		
+	     <ImageView 
+	        
+	        android:id="@+id/mp3_beforMusic_img"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/mp3_befor_btn_selector"
+	        android:clickable="true"/>
+	    
+	    <SeekBar
+	        android:id="@+id/mp3_seekbar"
+	        android:layout_width="200dp"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/mp3_beforMusic_img"
+	        android:layout_alignBaseline="@id/mp3_beforMusic_img"/>
+	    
+	    <ImageView 
+	        android:layout_alignBaseline="@id/mp3_seekbar"
+	        android:id="@+id/mp3_nextMusic_img"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:src="@drawable/mp3_next_music_btn_selector"
+	        android:clickable="true"
+	        android:layout_toRightOf="@id/mp3_seekbar"/>
+	    
+	    
+	   
+
+	    <TextView
+	        android:id="@+id/mp3_begin_times"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:layout_below="@id/mp3_seekbar"
+	        android:text="00:00" />
+	    
+	    <TextView
+	        android:id="@+id/mp3_end_times"
+	        android:layout_marginRight="5dp"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/mp3_seekbar"
+	        android:layout_alignParentRight="true"
+	        android:text="05:11" />
+	</RelativeLayout>
+
+</RelativeLayout>

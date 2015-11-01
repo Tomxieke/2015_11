@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	
+    <Button 
+        android:id="@+id/dialog_progress_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="进度条对话框"
+        android:textSize="15sp"/>
+    
+    <Button 
+        android:id="@+id/dialog_datePickerDialog_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="日期对话框"
+        android:textSize="15sp"/>
+    
+    <Button 
+        android:id="@+id/dialog_timePickerDialog_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="时间对话框"
+        android:textSize="15sp"/>
+    
+     <Button 
+        android:id="@+id/dialog_alertDialog_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="alert对话框"
+        android:textSize="15sp"/>
+     
+      <Button 
+        android:id="@+id/dialog_singleChoseDialog_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="单项选择对话框"
+        android:textSize="15sp"/>
+      
+      <Button 
+          android:id="@+id/dialog_myDialog_btn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="自定义对话框"/>
+      
+      <Button 
+          android:id="@+id/dialog_myExtendsDialog_btn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="继承Dialog自定义的对话框"/>
+      
+       <Button 
+          android:id="@+id/dialog_toastDialog_btn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="自定义Toast对话框"/>
+       
+        <Button 
+          android:id="@+id/dialog_ActivatyDialogOne_btn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:onClick="activityDialogOne"
+          android:text="Activity上实例化的Dialog1"/>
+        
+         <Button 
+          android:id="@+id/dialog_ActivityDialogTwo_btn"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:onClick="activityDialogTwo"
+          android:text="Activity上实例化的Dialog2"/>
+      
+      
+    
+</LinearLayout>

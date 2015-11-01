@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <ImageView 
+        android:layout_margin="3dp"
+        android:id="@+id/adapter_homework_imageview_icon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_person"/>
+    
+    <TextView 
+        android:layout_marginTop="5dp"
+        android:id="@+id/adapter_homework_textview_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/adapter_homework_imageview_icon"
+        android:text="牛肉面"
+        android:textSize="18sp"
+        android:gravity="center_horizontal"/>
+    
+    <TextView 
+        android:layout_margin="4dp"
+        android:id="@+id/adapter_homework_textview_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/adapter_homework_textview_title"
+        android:layout_toRightOf="@id/adapter_homework_imageview_icon"
+        android:text="2015年推出火腿鸡肠蛋炒饭，入口即化。香甜可口，绝对是饭桌上不可或缺的开胃菜。"/>
+    
+    <TextView 
+        android:layout_marginLeft="5dp"
+        android:id="@+id/adapter_homework_textview_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/adapter_homework_imageview_icon"
+        android:layout_below="@id/adapter_homework_textview_content"
+        android:layout_alignBottom="@id/adapter_homework_imageview_icon"
+        android:text="90元"
+        android:gravity="bottom"/>
+    
+    <TextView 
+        android:layout_marginLeft="5dp"
+        android:id="@+id/adapter_homework_textview_oldPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/adapter_homework_textview_price"
+        android:layout_below="@id/adapter_homework_textview_content"
+        android:layout_alignBaseline="@id/adapter_homework_textview_price"
+        android:text="10元"/>
+    
+    <TextView 
+        android:layout_marginRight="4dp"
+        android:id="@+id/adapter_homework_textview_sellCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/adapter_homework_textview_content"
+        android:layout_alignBaseline="@id/adapter_homework_textview_price"
+        android:text="已售200份"/>
+   
+    
+
+</RelativeLayout>

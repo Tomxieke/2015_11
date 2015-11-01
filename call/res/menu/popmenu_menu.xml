@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/pop_menu_one"
+        android:title="设置"/>
+    <item
+        android:id="@+id/pop_menu_two"
+        android:title="退出">
+        <menu>
+            <item android:title="二级设置"/>
+            <item android:title="二级退出"/>
+        </menu>
+    </item>
+<!--  二级菜单在里面嵌套 -->
+</menu>
