@@ -1,0 +1,88 @@
+package mp3_main;
+
+import java.io.File;
+import java.util.ArrayList;
+
+import mp3_adapter.MusicBean;
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+
+import com.example.mp3_player.R;
+
+public class MusicListActivity extends Activity implements OnItemClickListener{
+	private ListView mMusicNameListView;
+	private ArrayList<MusicBean> mMusicBeanList = new ArrayList<MusicBean>();
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.music_activity_list_layout);
+		initView();
+	}
+	
+	public void initView(){
+		mMusicNameListView = (ListView) findViewById(R.id.music_list_activity_listview);
+		mMusicNameListView.setOnItemClickListener(this);
+		
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+		
+	}
+	
+	/*适配器*/
+	public class ListViewMusicBeanAdapter extends BaseAdapter {
+		ArrayList<MusicBean> fileData = new ArrayList<MusicBean>();
+		private Context mContext;
+		private LayoutInflater mInflater;
+		public ListViewMusicBeanAdapter(Context context){
+			this.mContext = context;
+			mInflater = LayoutInflater.from(context);
+		}
+		public void refushData(ArrayList<MusicBean> list){
+			this.fileData = list;
+			notifyDataSetChanged();
+		}
+		
+		@Override
+		public int getCount() {
+			return fileData.size();
+		}
+
+		@Override
+		public Object getItem(int position) {
+			return fileData.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			return position;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			TextView mp3Name;
+			if(convertView == null){
+				convertView = mInflater.inflate(R.layout.listview_item_layout, null);
+				mp3Name = (TextView) convertView.findViewById(R.id.listview_music_name_txt);
+				convertView.setTag(mp3Name);
+			}
+			
+			MusicBean mp3MusicBean = (MusicBean) getItem(position);
+			mp3Name = (TextView) convertView.getTag();
+			mp3Name.setText(mp3MusicBean.getMusicName());
+			return convertView;
+		}
+	}
+}

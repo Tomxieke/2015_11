@@ -1,0 +1,7 @@
+package mp3_main;
+
+import android.app.TabActivity;
+
+public class Mp3TabHostActivity extends TabActivity {
+	
+}

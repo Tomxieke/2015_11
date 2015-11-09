@@ -1,0 +1,19 @@
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="android.app.Service"><rhs name\="serivce.MySercive"/></lhs><lhs name\="android.content.ComponentCallbacks2"><rhs name\="serivce.MySercive"/></lhs><lhs name\="android.content.ComponentCallbacks"><rhs name\="serivce.MySercive"/></lhs><lhs name\="android.content.ContextWrapper"><rhs name\="serivce.MySercive"/></lhs><lhs name\="android.content.Context"><rhs name\="serivce.MySercive"/></lhs><lhs name\="serivce.MySercive"><rhs name\="serivce.MySercive"/></lhs><lhs name\="android.media.MediaPlayer"><rhs name\="android.media.MediaPlayer"/></lhs><lhs name\="android.support.v4.view.PagerAdapter"><rhs name\="mp3_adapter.ViewPagerAdapter"/></lhs><lhs name\="mp3_adapter.ViewPagerAdapter"><rhs name\="mp3_adapter.ViewPagerAdapter"/></lhs><lhs name\="android.widget.BaseAdapter"><rhs name\="mp3_adapter.ListViewAdapter"/></lhs><lhs name\="android.widget.ListAdapter"><rhs name\="mp3_adapter.ListViewAdapter"/></lhs><lhs name\="android.widget.SpinnerAdapter"><rhs name\="mp3_adapter.ListViewAdapter"/></lhs><lhs name\="android.widget.Adapter"><rhs name\="mp3_adapter.ListViewAdapter"/></lhs><lhs name\="mp3_adapter.ListViewAdapter"><rhs name\="mp3_adapter.ListViewAdapter"/></lhs><lhs name\="android.text.method.MovementMethod"><rhs name\="android.text.method.ScrollingMovementMethod"/></lhs><lhs name\="android.os.Parcelable"><rhs name\="android.content.Intent"/><rhs name\="android.os.Message"/><rhs name\="android.content.IntentFilter"/></lhs><lhs name\="java.lang.Cloneable"><rhs name\="android.content.Intent"/></lhs><lhs name\="android.content.Intent"><rhs name\="android.content.Intent"/></lhs><lhs name\="android.content.IntentFilter"><rhs name\="android.content.IntentFilter"/></lhs></history>
+content_assist_number_of_computers=12
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+fontPropagated=true
+org.eclipse.jdt.ui.editor.tab.width=
+org.eclipse.jdt.ui.formatterprofiles.version=12
+org.eclipse.jdt.ui.javadoclocations.migrated=true
+org.eclipse.jdt.ui.text.code_templates_migrated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.templates_migrated=true
+org.eclipse.jface.textfont=1|Consolas|12.0|2|WINDOWS|1|-16|0|0|0|400|-1|0|0|0|3|2|1|49|Consolas;
+proposalOrderMigrated=true
+spelling_locale_initialized=true
+tabWidthPropagated=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

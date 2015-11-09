@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login" >
+
+    <GridView
+        android:id="@+id/home_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/search_item_bg"
+        android:numColumns="3"
+        android:padding="10dp" />
+
+    <RelativeLayout
+        android:id="@+id/home_relativeLayout"
+        android:layout_below="@id/home_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="猜你喜欢"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview1"
+            android:text="偶遇好音乐"
+            android:layout_marginLeft="10dp"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+        
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/share_item_wx_timeline"/>
+        
+    </RelativeLayout>
+
+</RelativeLayout>

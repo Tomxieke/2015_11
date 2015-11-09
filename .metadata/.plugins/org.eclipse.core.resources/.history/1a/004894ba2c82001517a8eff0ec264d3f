@@ -1,0 +1,17 @@
+package mp3_main;
+
+import com.example.mp3_player.R;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+public class StartActivity extends Activity {
+	private ImageView mImg;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.start_activity_layout);
+	}
+	
+}

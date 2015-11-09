@@ -1,0 +1,45 @@
+package service_by_binder;
+/**
+ * 实现service与activity之间的交互
+ * 1、定义一个交互接口
+ */
+import mylog.Mylog;
+import android.app.Service;
+import android.content.Intent;
+import android.os.IBinder;
+
+public class MyBinderService extends Service {
+	private int count;
+	public interface ServiceCount{   //交互接口
+		public void setCount(int _count);
+		public int getCount();
+	}
+	@Override
+	public void onCreate() {
+		super.onCreate();
+		new Thread(new Runnable() {
+			@Override   //启动线程让count自增
+			public void run() {
+				try {
+					Thread.sleep(1000);
+					count++;
+					Mylog.i(""+count);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}).start();
+	}
+
+	@Override
+	public IBinder onBind(Intent arg0) {
+		return null;
+	}
+	
+	
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+	}
+
+}

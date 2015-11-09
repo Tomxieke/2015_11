@@ -1,0 +1,14 @@
+package test;
+
+import com.example.mp3_player.R;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class TestListViewActivity extends Activity {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.test_listview_main_layout);
+	}
+}

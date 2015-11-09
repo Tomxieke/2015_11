@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=call/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-15\/android.jar&lt;android.app(Service.class[Service" modifiers="1057" timestamp="1343096274000"/>
+<typeInfo handle="=call/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-15\/android.jar&lt;android.app(Activity.class[Activity" modifiers="33" timestamp="1343096274000"/>
+<typeInfo handle="=mp3_player/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-19\/android.jar&lt;android.app(Service.class[Service" modifiers="1057" timestamp="1393013484000"/>
+<typeInfo handle="=mp3_player/D:\/android\/2015_11\/mp3_player\/libs\/android-support-v4.jar&lt;android.support.v4.view(PagerAdapter.class[PagerAdapter" modifiers="1057" timestamp="1446434942922"/>
+<typeInfo handle="=mp3_player/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-19\/android.jar&lt;android.widget(TextView.class[TextView" modifiers="33" timestamp="1393013484000"/>
+<typeInfo handle="=mp3_player/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-19\/android.jar&lt;android.app(TabActivity.class[TabActivity" modifiers="1048609" timestamp="1393013484000"/>
+<typeInfo handle="=mp3_player/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-19\/android.jar&lt;android.widget(BaseAdapter.class[BaseAdapter" modifiers="1057" timestamp="1393013484000"/>
+<typeInfo handle="=mp3_player/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-19\/android.jar&lt;android.app(Activity.class[Activity" modifiers="33" timestamp="1393013484000"/>
+</typeInfoHistroy>

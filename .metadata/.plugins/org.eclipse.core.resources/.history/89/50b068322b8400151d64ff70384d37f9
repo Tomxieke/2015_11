@@ -1,0 +1,109 @@
+package test;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.mp3_player.R;
+
+public class TestGridViewActivity extends Activity {
+	private GridView mGridView;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.viewpager_home_main_layout);
+		mGridView = (GridView) findViewById(R.id.home_gridview);
+		
+	}
+	
+	
+	public class HomeGridViewAdapter extends BaseAdapter{
+		ArrayList<Icon>  data = new ArrayList<Icon>(); 
+		private Context mContext;
+		private LayoutInflater mInflter;
+		public HomeGridViewAdapter(Context context){
+			this.mContext = context;
+			mInflter = LayoutInflater.from(context);
+		}
+		
+		public void refrishData(ArrayList<Icon> data){
+			this.data = data;
+		}
+
+		@Override
+		public int getCount() {
+			return data.size();
+		}
+
+		@Override
+		public Object getItem(int position) {
+			return data.get(position);
+		}
+
+		@Override
+		public long getItemId(int position) {
+			return position;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			Holder holder = new Holder();
+			View v;
+			if(convertView == null){
+				v = mInflter.inflate(R.layout.gridview_item_layout, null);
+				holder.iconImg = (ImageView) v.findViewById(R.id.gridView_item_img);
+				holder.contentView = (TextView) v.findViewById(R.id.gridView_item_contentTxt);
+				holder.countView =(TextView) v.findViewById(R.id.gridView_item_countTxt);
+				v.setTag(holder);
+			}else{
+				v = convertView;
+				holder = (Holder) v.getTag();
+			}
+			Icon icons = data.get(position);
+			holder.iconImg.setImageResource(icons.getIcon_id());
+			holder.contentView.setText(icons.getText());
+			holder.countView.setText(icons.getCount());
+			return v;
+		}
+		
+		class Holder{
+			ImageView iconImg;
+			TextView contentView,countView;
+		}
+		
+	}
+	
+	public class Icon{  //保存GridView每一项的数据
+		private int icon_id;  //图标资源id
+		private String text;	//文本
+		private int count;	//下方数值
+		public int getIcon_id() {
+			return icon_id;
+		}
+		public void setIcon_id(int icon_id) {
+			this.icon_id = icon_id;
+		}
+		public String getText() {
+			return text;
+		}
+		public void setText(String text) {
+			this.text = text;
+		}
+		public int getCount() {
+			return count;
+		}
+		public void setCount(int count) {
+			this.count = count;
+		}
+		
+	}
+}

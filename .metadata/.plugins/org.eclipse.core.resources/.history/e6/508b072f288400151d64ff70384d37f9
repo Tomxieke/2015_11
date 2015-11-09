@@ -1,0 +1,65 @@
+package test;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.GridView;
+
+import com.example.mp3_player.R;
+
+public class TestGridViewActivity extends Activity {
+	private GridView mGridView;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.viewpager_home_main_layout);
+		mGridView = (GridView) findViewById(R.id.home_gridview);
+		
+	}
+	
+	
+	public class HomeGridViewAdapter extends BaseAdapter{
+		ArrayList<Icon>  data = new ArrayList<Icon>(); 
+		private Context mContext;
+		private LayoutInflater mInflter;
+		public HomeGridViewAdapter(Context context){
+			this.mContext = context;
+			mInflter = LayoutInflater.from(context);
+		}
+		
+		public void refrishData(ArrayList<Icon> data){
+			this.data = data;
+		}
+
+		@Override
+		public int getCount() {
+			return 0;
+		}
+
+		@Override
+		public Object getItem(int position) {
+			return null;
+		}
+
+		@Override
+		public long getItemId(int position) {
+			return 0;
+		}
+
+		@Override
+		public View getView(int position, View convertView, ViewGroup parent) {
+			return null;
+		}
+		
+	}
+	
+	public class Icon{  //保存GridView每一项的数据
+		
+	}
+}
