@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/show_progress_txt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+    <SeekBar 
+        android:id="@+id/asynctask_seekbar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+    
+    <Button 
+        android:id="@+id/thread_start_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="线程加handler方式加载进度"/>
+    
+    <Button 
+        android:id="@+id/asybctask_start_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="asybctask加载进度"/>
+    
+    
+    <Button 
+        android:id="@+id/asybctask_downloadPicture_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="asybctask网路下载图片"/>
+    
+    <ImageView 
+        android:id="@+id/downloadpicture_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

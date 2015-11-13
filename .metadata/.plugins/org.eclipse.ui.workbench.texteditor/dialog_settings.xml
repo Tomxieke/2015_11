@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="mMusicNameText" key="selection"/>
+		<item value="MainActivity" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="MainActivity"/>
+			<item value="MusicActivity"/>
 			<item value="mMusicNameText"/>
 			<item value="returnResult"/>
 		</list>

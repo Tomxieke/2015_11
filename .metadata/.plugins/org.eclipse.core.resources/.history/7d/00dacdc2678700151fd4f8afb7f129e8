@@ -1,0 +1,172 @@
+package replayer;
+
+import mylog.Mylog;
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+
+import com.example.mp3_player.R;
+
+public class PlayerActivity extends Activity implements OnClickListener,OnSeekBarChangeListener{
+	private ImageView mNextMusicImg,mLastMusicImg,mPuseImg,mlocalMusicImg;
+	private TextView mNowTimeTxt,mTotalTimeTxt;
+	private Intent mIntent;
+	private SeekBar mSeekbar;
+	private Handler mHandler = new Handler();
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main_layout);
+		initView();
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		resgesitReceiver();  //注册广播
+	}
+	
+	@Override
+	protected void onPause() {  //注销广播
+		super.onPause();
+		unregisterReceiver(receiver);  
+	}
+	
+	public void initView(){
+		mIntent = new Intent(this,Resevice.class);
+		mNextMusicImg = (ImageView) findViewById(R.id.mp3_nextMusic_btn);
+		mNextMusicImg.setOnClickListener(this);
+		mLastMusicImg = (ImageView) findViewById(R.id.mp3_lastMusic_btn);
+		mLastMusicImg.setOnClickListener(this);
+		mPuseImg = (ImageView) findViewById(R.id.mp3_puseMusic_btn);
+		mPuseImg.setOnClickListener(this);
+		mlocalMusicImg = (ImageView) findViewById(R.id.local_music_img);
+		mlocalMusicImg.setOnClickListener(this);
+		mSeekbar = (SeekBar) findViewById(R.id.mp3_seekbar);
+		mSeekbar.setOnSeekBarChangeListener(this);
+		
+		mNowTimeTxt = (TextView) findViewById(R.id.mp3_nowtime_txt);
+		mTotalTimeTxt = (TextView) findViewById(R.id.mp3_alltime_txt);
+		
+		
+		Intent intent = getIntent();
+		mIntent.putExtras(intent);
+		startService(mIntent);
+	}
+//--------------------------seekbar事件--------------------------------	
+	int userProgress;
+	boolean user;   //拖动进度条时间过长是要弹回去
+	@Override
+	public void onProgressChanged(SeekBar seekBar, int progress,
+			boolean fromUser) {
+		userProgress = progress; 
+		user = fromUser;
+	}
+
+	@Override
+	public void onStartTrackingTouch(SeekBar seekBar) {
+		
+	}
+
+	@Override
+	public void onStopTrackingTouch(SeekBar seekBar) {
+		actionIntent.setAction(Action.USER_PROGRESS);
+		actionIntent.putExtra(Action.USER_PROGRESS, userProgress);
+		sendBroadcast(actionIntent);
+		user = !user;
+	}
+	
+//------------------------------------------------------	
+	Intent actionIntent = new Intent();
+	@Override
+	public void onClick(View v) {
+		switch(v.getId()){
+		case R.id.mp3_nextMusic_btn:
+			actionIntent.setAction(Action.NAXT_MUSIC);
+			sendBroadcast(actionIntent);
+			break;
+		case R.id.mp3_puseMusic_btn:
+			actionIntent.setAction(Action.PAUSE_MUSIC);
+			sendBroadcast(actionIntent);
+			break;
+		case R.id.mp3_lastMusic_btn:
+			actionIntent.setAction(Action.LAST_MUSIC);
+			sendBroadcast(actionIntent);
+			break;
+		}
+	}
+	
+	
+	ActivityReceiver receiver = new ActivityReceiver();
+	/*注册广播*/
+	public void resgesitReceiver(){
+		receiver = new ActivityReceiver();
+		IntentFilter filter = new IntentFilter(Action.PLAY_STATE_PLAYINT);
+		filter.addAction(Action.PLAY_STATE_PAUSE);
+		filter.addAction(Action.PLAY_TIME);
+		registerReceiver(receiver, filter);
+	}
+	
+	/*广播*/
+	public class ActivityReceiver extends BroadcastReceiver{
+		int nowTime,totalTime;
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			String action = intent.getAction();
+			if(Action.PLAY_STATE_PLAYINT.equals(action)){
+				mPuseImg.setImageResource(R.drawable.landscape_player_btn_play_normal);
+			}else if(Action.PLAY_STATE_PAUSE.equals(action)){
+				mPuseImg.setImageResource(R.drawable.landscape_player_btn_pause_normal);
+			}else if(Action.PLAY_TIME.equals(action)){
+				totalTime = intent.getIntExtra(Action.MUSIC_TOTAL_TIME, 0);  //得到总时间
+				mSeekbar.setMax(totalTime);
+				nowTime = intent.getIntExtra(Action.MUSIC_NOW_TIME, 0); //当前进度
+				if(user){
+					
+				}else{
+					mSeekbar.setProgress(nowTime);
+				}
+				mHandler.post(new Runnable() {
+					@Override
+					public void run() {
+						mNowTimeTxt.setText(setTimes(nowTime));
+						mTotalTimeTxt.setText(setTimes(totalTime));
+					}
+				});
+			}
+		}
+	}
+
+	/*时间00:00处理*/
+	public String setTimes(int times){
+		int mTimes = times/1000;
+		int minute = 0,second = 0 ;
+		//if(mTimes > 60){
+			minute = (int) (mTimes/60);
+			second = (int) (mTimes%60);
+			return getTime(minute) + ":" + getTime(second);
+		/*}else{
+			second = (int) (mTimes%60);
+			return getTime(minute) + ":" + 
+		}*/
+	}
+	
+	public String getTime(int date){
+		if(date < 10){
+			return "0" + date;
+		}else{
+			return "" + date;
+		}
+	}
+	
+}

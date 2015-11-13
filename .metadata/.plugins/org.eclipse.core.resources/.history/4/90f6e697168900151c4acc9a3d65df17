@@ -1,0 +1,17 @@
+package asynctask;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.GridView;
+
+import com.example.call.R;
+
+public class GridViewAsynctaskActivity extends Activity {
+	private GridView mGridView;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.gridview_asynctask_layout);
+		mGridView = (GridView) findViewById(R.id.gridview_asynctask);
+	}
+}

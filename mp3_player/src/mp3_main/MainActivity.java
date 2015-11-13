@@ -257,15 +257,23 @@ public class MainActivity extends Activity implements OnClickListener,OnItemClic
 			public void run() {
 				while (flag) {
 					if (mServiceBinder != null && state) {
+						
 						mHandler.post(new Runnable() {
+							int nowTime;
 							@Override
 							public void run() {
-								final int totalTime = mServiceBinder.getTotalTime();
-								final int nowTime = mServiceBinder.getNowTime();
+								int totalTime = mServiceBinder.getTotalTime();
+							//	nowTime = mServiceBinder.getNowTime();
 								mSeekbar.setMax(totalTime);
+								/*if(forUser){
+									nowTime = seekBarProgress;
+								}*/
+								nowTime = mServiceBinder.getNowTime();
+								
 								mSeekbar.setProgress(nowTime);
 								mNowTimeTxt.setText(setTimes(nowTime));
 								mTotalTimeTxt.setText(setTimes(totalTime));
+								
 							//	mMusicNameText.setText("正在播放      "+mServiceBinder.getMusicName());
 							//	mMusicNameText.setMovementMethod(ScrollingMovementMethod.getInstance());
 							}
@@ -303,6 +311,7 @@ public class MainActivity extends Activity implements OnClickListener,OnItemClic
 	}
 //-----------------------------------------------------------------
 	private int seekBarProgress;   //解决拖动进度条卡顿问题，记录进度
+	boolean forUser ;
 	@Override
 	public void onProgressChanged(SeekBar seekBar, int progress,
 			boolean fromUser) {
@@ -310,6 +319,7 @@ public class MainActivity extends Activity implements OnClickListener,OnItemClic
 			mServiceBinder.setMediaPlayer(progress);
 		}*/
 		seekBarProgress = progress;
+		forUser = fromUser;
 	}
 
 

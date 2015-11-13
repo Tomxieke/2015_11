@@ -1,0 +1,47 @@
+package data.contentprovider.moretable;
+
+import android.content.ContentProvider;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
+
+public class TwoTableContentProvider extends ContentProvider {
+	private static final String AUTHORITY = "twotable";  //多表查询权限
+	private static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY);
+	
+	private SQLiteDatabase db;
+	@Override
+	public boolean onCreate() {
+		TwoTableDBHelper helper = new TwoTableDBHelper(getContext());
+		db = helper.getReadableDatabase();
+		return false;
+	}
+
+	@Override
+	public Cursor query(Uri uri, String[] projection, String selection,String[] selectionArgs, String sortOrder) {
+		return null;
+	}
+
+	@Override
+	public String getType(Uri uri) {
+		return null;
+	}
+
+	@Override
+	public Uri insert(Uri uri, ContentValues values) {
+		return null;
+	}
+
+	@Override
+	public int delete(Uri uri, String selection, String[] selectionArgs) {
+		return 0;
+	}
+
+	@Override
+	public int update(Uri uri, ContentValues values, String selection,
+			String[] selectionArgs) {
+		return 0;
+	}
+
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <ImageView 
+        android:id="@+id/notification_icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_margin="3dp"
+        android:src="@drawable/scanning_animation"/>
+    
+    <TextView 
+        android:id="@+id/notification_music_content_txt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Beyond  光辉岁月"
+        android:gravity="center_horizontal"
+        android:layout_toRightOf="@id/notification_icon"/>
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/notification_icon"
+        android:layout_below="@id/notification_music_content_txt"
+        android:orientation="horizontal">
+        
+        <ImageView
+	        android:id="@+id/mp3_lastMusic_btn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:clickable="true"
+	        android:src="@drawable/mp3_lastmusic_btn_selector" />
+	    
+	    <ImageView
+	        android:id="@+id/mp3_puseMusic_btn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:clickable="true"
+	        android:src="@drawable/landscape_player_btn_play_normal" />
+
+	    <ImageView
+	        android:id="@+id/mp3_nextMusic_btn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:clickable="true"
+	        android:src="@drawable/mp3_nextmusic_btn_selector" />
+        
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,9 @@
+package replayer;
+
+public interface Action {
+	public static final String PLAY_MUSIC = "play_music";
+	public static final String LAST_MUSIC = "last_music";
+	public static final String NAXT_MUSIC = "naxt_music";
+	public static final String PAUSE_MUSIC = "pause_music";
+	public static final String PLAY_STATE  = "play_state";
+}

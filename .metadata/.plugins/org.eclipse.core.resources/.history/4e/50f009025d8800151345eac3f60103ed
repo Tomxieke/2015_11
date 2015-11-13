@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <Button 
+        android:id="@+id/notification_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="点击发送通知"/>
+    
+    <Button 
+        android:id="@+id/notification_update_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="刷新通知"/>
+    
+    <Button 
+        android:id="@+id/notification_clean_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="清除通知"/>
+    
+    <Button 
+        android:id="@+id/notification_navigation_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="导航通知"/>
+    
+    <Button 
+        android:id="@+id/notification_dowlend_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="确定型下载通知"/>
+    
+    <Button 
+        android:id="@+id/notification_unknowdowlend_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="不确定型下载通知"/>
+    
+    <Button 
+        android:id="@+id/notification_bigView_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="bigView通知"/>
+    
+    <Button 
+        android:id="@+id/notification_myself_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义通知显示拦"/>
+    
+
+</LinearLayout>

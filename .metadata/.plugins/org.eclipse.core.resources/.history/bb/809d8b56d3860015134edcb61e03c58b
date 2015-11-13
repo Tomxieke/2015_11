@@ -1,0 +1,5 @@
+package replayer;
+
+public interface Action {
+	public static final String PLAY_MUSIC = "play_music";
+}
