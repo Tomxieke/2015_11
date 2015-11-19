@@ -5,6 +5,12 @@
     android:orientation="vertical" 
     android:background="@drawable/bg_login">
     
+    <ImageView 
+        android:id="@+id/anim_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/scanning_animation"/>
+    
     <ListView 
         android:id="@+id/music_list_activity_listview"
         android:layout_width="fill_parent"

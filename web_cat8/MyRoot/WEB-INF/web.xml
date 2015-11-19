@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee">
+
+  <servlet>
+    <servlet-name>Manager</servlet-name>
+    <servlet-class>CatServelet.WebTestServelet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>HttpServeletAndroid</servlet-name>
+    <servlet-class>CatServelet.HttpServeletAndroid</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+    <servlet-name>Manager</servlet-name>
+      <url-pattern>/myweb</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HttpServeletAndroid</servlet-name>
+      <url-pattern>/and</url-pattern>
+  </servlet-mapping>
+</web-app>

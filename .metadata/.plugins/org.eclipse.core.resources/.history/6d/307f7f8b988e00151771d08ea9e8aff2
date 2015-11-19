@@ -1,0 +1,112 @@
+package webview;
+
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.util.EntityUtils;
+
+
+
+import android.os.AsyncTask;
+
+/**
+ * HttpClient连接网络的封装工具类  
+ * 采用回调机制将服务器响应的参数传回给客服端
+ * @author scxh
+ *
+ */
+public class HttpClientConnectUtil {
+	public static final String DO_GET = "GET";
+	public static final String DO_POST = "POST";
+	/*定义回调接口*/
+	interface ConnectCallBack{   
+		public void getConnectMsg(String msg);
+	}
+	/*注册接口*/
+	private ConnectCallBack mCallBack;
+	public void setConnectCallBack(ConnectCallBack hCallBack){
+		mCallBack = hCallBack;
+	}
+	
+	public void HttpConnectMethods(String url,final String MethodType,final HashMap<String,Object> parameters,ConnectCallBack hCallBack){
+		mCallBack = hCallBack;
+		 HttpConnectMethod(url,MethodType,parameters);
+	}
+	
+	/*对HttpClient请求网络的一个封装*/
+	public void HttpConnectMethod(String url,final String MethodType,final HashMap<String,Object> parameters){
+		new AsyncTask<String, Void, String>(){
+			@Override
+			protected String doInBackground(String... params) {
+				String httpUrl = params[0];
+				HttpClient client = new DefaultHttpClient();
+				if(MethodType.equalsIgnoreCase("GET")){   //get请求
+					if(parameters != null){  //参数不为空。
+						httpUrl = httpUrl + "?";
+						StringBuilder sb = new StringBuilder(httpUrl);
+						for(String key:parameters.keySet()){
+							Object values = parameters.get(key);
+							sb.append(key).append("=").append(values).append("&");   
+							//http://192.168.1.112:8080/app/myweb?username=xxx&password=xxx&  就是多出一个&
+						}
+						httpUrl = sb.substring(0, sb.length()-1);
+					}
+					HttpGet getRequest = new HttpGet(httpUrl);
+					try {
+						HttpResponse response = client.execute(getRequest);
+						String str = EntityUtils.toString(response.getEntity());   //得到响应数据
+						return str;
+					} catch (ClientProtocolException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}   //执行请求并得到响应
+				}else if(MethodType.equalsIgnoreCase("post")){  //post请求
+					HttpPost postRequst = new HttpPost(httpUrl);
+					if(parameters != null){  //带参数的
+						ArrayList<BasicNameValuePair> pairs = new ArrayList<BasicNameValuePair>();
+						for(String key:parameters.keySet()){
+							Object values = parameters.get(key);
+							BasicNameValuePair Pair = new BasicNameValuePair(key, (String) values);
+							pairs.add(Pair);
+						}
+						try {
+							HttpEntity entity = new UrlEncodedFormEntity(pairs, "UTF-8");//设置编码字符集防止乱码
+							postRequst.setEntity(entity);  //向请求中加载参数
+						} catch (UnsupportedEncodingException e) {
+							e.printStackTrace();
+						}  
+					}
+					try {
+						HttpResponse response = client.execute(postRequst);  //执行请求返回响应对象
+						String str = EntityUtils.toString(response.getEntity());
+						return str;
+					} catch (UnsupportedEncodingException e) {
+						e.printStackTrace();
+					} catch (ClientProtocolException e) {
+						e.printStackTrace();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					
+				}
+				return null;
+			}
+			
+			protected void onPostExecute(String result) {
+				mCallBack.getConnectMsg(result);
+			};
+		}.execute(url);
+	}
+}

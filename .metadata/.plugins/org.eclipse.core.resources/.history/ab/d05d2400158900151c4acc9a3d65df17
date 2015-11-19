@@ -1,7 +1,0 @@
-package asynctask;
-
-import android.app.Activity;
-
-public class GridViewAsynctaskActivity extends Activity {
-
-}

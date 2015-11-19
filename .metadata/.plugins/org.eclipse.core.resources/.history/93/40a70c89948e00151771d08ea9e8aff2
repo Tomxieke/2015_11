@@ -1,0 +1,9 @@
+package webview;
+/**
+ * HttpClient连接网络的封装工具类
+ * @author scxh
+ *
+ */
+public class HttpClientConnectUtil {
+	
+}

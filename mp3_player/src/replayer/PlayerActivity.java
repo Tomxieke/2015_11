@@ -88,7 +88,7 @@ public class PlayerActivity extends Activity implements OnClickListener,OnSeekBa
 		super.onDestroy();
 		if(mServiceConnection != null){
 			unbindService(mServiceConnection);
-			stopService(mIntent);
+		//	stopService(mIntent);
 		}
 		
 	}

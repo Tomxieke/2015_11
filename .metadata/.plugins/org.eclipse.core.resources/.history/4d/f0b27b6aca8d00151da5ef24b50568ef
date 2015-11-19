@@ -1,0 +1,7 @@
+package CatServelet;
+
+import javax.servlet.http.HttpServlet;
+
+public class HttpServeletAndroid extends HttpServlet {
+
+}

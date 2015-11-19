@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 
 import mp3_adapter.MusicBean;
-import mylog.Mylog;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -15,9 +14,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -28,6 +30,7 @@ public class ReMusicListActivity extends Activity implements OnItemClickListener
 	private ArrayList<MusicBean> mMusicBeanList = new ArrayList<MusicBean>();
 	private Intent mIntent;
 	private Handler mHandler = new Handler();
+	private ImageView mImageView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -39,6 +42,12 @@ public class ReMusicListActivity extends Activity implements OnItemClickListener
 	public void initView(){
 		mMusicNameListView = (ListView) findViewById(R.id.music_list_activity_listview);
 		mMusicNameListView.setOnItemClickListener(this);
+		
+		mImageView = (ImageView) findViewById(R.id.anim_img);
+		Animation operatingAnim = AnimationUtils.loadAnimation(this, R.anim.player_rotate); 
+		mImageView.startAnimation(operatingAnim);
+		
+		
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -62,7 +71,6 @@ public class ReMusicListActivity extends Activity implements OnItemClickListener
 		mIntent.putParcelableArrayListExtra("MusicBean", mMusicBeanList);
 		mIntent.putExtra("posstion", arg2);
 		startActivity(mIntent);
-		finish();
 	}
 	
 	

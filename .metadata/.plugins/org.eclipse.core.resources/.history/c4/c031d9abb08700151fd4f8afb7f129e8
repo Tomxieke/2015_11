@@ -1,7 +1,0 @@
-package data.contentprovider.moretable;
-
-import android.test.AndroidTestCase;
-
-public class TestTwoTable extends AndroidTestCase {
-
-}

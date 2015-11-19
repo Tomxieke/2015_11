@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<TextView 
+	    android:id="@+id/http_text"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"/>
+	
+	<Button 
+	    android:id="@+id/http_doget_btn"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="连接serveletGET请求"/>
+	
+	<Button 
+	    android:id="@+id/http_dopost_btn"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="连接serveletPOST请求"/>
+	
+	<Button 
+	    android:id="@+id/http_client_get_btn"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="HttpClient阿吧奇get请求"/>
+	
+	<Button 
+	    android:id="@+id/http_client_post_btn"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="HttpClient阿吧奇post带参请求"/>
+	
+	<Button 
+	    android:id="@+id/httpclient_getpost_btn"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="HttpClient封装方法请求"/>
+	
+</LinearLayout>

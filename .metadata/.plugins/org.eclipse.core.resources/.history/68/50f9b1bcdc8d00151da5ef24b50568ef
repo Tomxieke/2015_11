@@ -1,0 +1,131 @@
+package webview;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.sql.Connection;
+
+import android.app.Activity;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.call.R;
+
+public class HttpServeletActivity extends Activity {
+	private TextView mShowMsgTxt;
+	private Button mConnecyBtn,mDopostBtn;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.httpservelet_main_layout);
+		mShowMsgTxt = (TextView) findViewById(R.id.http_text);
+		
+		mConnecyBtn = (Button) findViewById(R.id.http_doget_btn);
+		mConnecyBtn.setOnClickListener(new OnClickListener() {
+			String httpUrl = "http://192.168.1.112:8080/app/myweb";
+			@Override
+			public void onClick(View v) {
+				new AsyncTask<String, Void, String>(){
+					@Override
+					protected String doInBackground(String... params) {
+						return getHttpDoget(params[0]);
+					}
+					protected void onPostExecute(String result) {
+						mShowMsgTxt.setText(result);
+					};
+				}.execute(httpUrl);
+			}
+		});
+		
+		mDopostBtn = (Button) findViewById(R.id.http_dopost_btn);
+		mDopostBtn.setOnClickListener(new OnClickListener() {
+			String http = "http://192.168.1.112:8080/app/myweb";
+			@Override
+			public void onClick(View v) {
+				new AsyncTask<String, Void, String>(){
+					@Override
+					protected String doInBackground(String... params) {
+						return getHttpDopost(params[0]);
+					}
+					protected void onPostExecute(String result) {
+						mShowMsgTxt.setText(result);
+					};
+				}.execute(http);
+			}
+		});
+	}
+	
+	/*post请求方式连接服务器,给服务器传递参数用流写入的方式*/
+	public String getHttpDopost(String httpUrl){
+		try {
+			URL url = new URL(httpUrl);
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("POST");
+			conn.setConnectTimeout(15000);  //设置连接超时
+			conn.setReadTimeout(10000);  //设置读取超时
+			conn.connect();  //建立连接
+			
+			/*得到流向服务器传数据*/
+			OutputStream out = conn.getOutputStream();
+			PrintWriter pr = new PrintWriter(out);
+			String name = URLEncoder.encode("小明", "utf-8");   //中文输入先指定编码，不然会出现乱码
+			pr.print("username="+name+"&password=1234");
+			pr.flush();
+			
+			/*读取服务端数据*/
+			InputStream in = conn.getInputStream();
+			BufferedReader br = new BufferedReader(new InputStreamReader(in, "utf-8"));  //得到连接服务器的缓冲流
+			String line;
+			StringBuilder sb = new StringBuilder();
+			while((line=br.readLine()) != null){    //从服务中读取请求返回的数据
+				sb.append(line);
+			}
+			return sb.toString();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
+	/*get请求方式连接服务器   get请求传递参数在url后面加参数*/
+	public String getHttpDoget(String httpUrl){
+		try {
+			String name = URLEncoder.encode("小红", "utf-8");   //中文输入先指定编码，不然会出现乱码
+			URL url = new URL(httpUrl+"?username="+name+"&password=abcd");
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setConnectTimeout(15000);  //设置连接超时
+			conn.setReadTimeout(10000);  //设置读取超时
+			conn.connect();  //建立连接
+			
+			InputStream in = conn.getInputStream();
+			BufferedReader br = new BufferedReader(new InputStreamReader(in, "utf-8"));  //得到连接服务器的缓冲流
+			String line;
+			StringBuilder sb = new StringBuilder();
+			while((line=br.readLine()) != null){    //从服务中读取请求返回的数据
+				sb.append(line);
+			}
+			return sb.toString();
+			
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+}

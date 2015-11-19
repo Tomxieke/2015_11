@@ -1,7 +1,0 @@
-package broadcast_receiver;
-
-import android.app.Activity;
-
-public class ReceiverActivity extends Activity {
-
-}

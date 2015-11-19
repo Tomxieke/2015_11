@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=call/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-15\/android.jar&lt;android.content(BroadcastReceiver.class[BroadcastReceiver" modifiers="1057" timestamp="1343096274000"/>
-<typeInfo handle="=call/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-15\/android.jar&lt;android.database.sqlite(SQLiteOpenHelper.class[SQLiteOpenHelper" modifiers="1057" timestamp="1343096274000"/>
-<typeInfo handle="=call/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-15\/android.jar&lt;android.test(AndroidTestCase.class[AndroidTestCase" modifiers="33" timestamp="1343096274000"/>
-<typeInfo handle="=call/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-15\/android.jar&lt;android.app(Service.class[Service" modifiers="1057" timestamp="1343096274000"/>
 <typeInfo handle="=call/D:\/android\/adt-bundle-windows-x86-20140702\/android-sdk-windows\/platforms\/android-15\/android.jar&lt;android.app(Activity.class[Activity" modifiers="33" timestamp="1343096274000"/>
+<typeInfo handle="=web_cat8/D:\/apache-tomcat-8.0.28-windows-x86\/apache-tomcat-8.0.28\/lib\/servlet-api.jar&lt;javax.servlet.http(HttpServlet.class[HttpServlet" modifiers="1057" timestamp="1444217180000"/>
 </typeInfoHistroy>

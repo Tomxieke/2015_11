@@ -1,0 +1,38 @@
+package webview;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Window;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.widget.Toast;
+
+import com.example.call.R;
+
+public class WebViewActivity extends Activity {
+	private WebView mWebView;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.webview_activity_layout);
+		
+		/*第一步加HTML文件加载到WebView   */
+		String url = "http://192.168.56.1:8080/HQ/hunqing.html"; 
+		mWebView = (WebView) findViewById(R.id.webview);
+		mWebView.loadUrl(url);
+		
+		/**/
+		WebSettings settings = mWebView.getSettings();
+		
+	}
+	
+	/*构造交互接口名JAVASCRIPT_NAME和交互方法show()等
+	 * 交互接口名和方法名都将在html中JavaScript中用到*/
+	class WebViewJavaScript{
+		public static final String JAVASCRIPT_NAME = "JavaScript_interface";
+		public void show(){
+			Toast.makeText(WebViewActivity.this, "我是JavaScript接口方法", Toast.LENGTH_SHORT).show();
+		}
+	}
+}

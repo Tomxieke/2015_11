@@ -1,0 +1,19 @@
+package CatServelet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class WebTestServelet extends HttpServlet {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		System.out.println("11111");
+		String name = req.getParameter("username");
+		String user_name = new String(name.getBytes("ISO-8859-1"),"UTF-8");   //解决乱码问题方式一
+		String password = req.getParameter("password");
+		resp.getWriter().print("password:" + password +"\n" +"username:"+user_name);
+	}
+}
